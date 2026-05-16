@@ -29,12 +29,23 @@ flutter run -d chrome
 ## Build Web
 
 ```bash
-flutter build web
+flutter build web --release --base-href "/mood_tracker/"
 ```
 
 ## Deployment
 
-Deployment URL: add the hosted link here after publishing to Firebase Hosting or Vercel.
+Live app: https://momen28121993.github.io/mood_tracker/
+
+Hosted on GitHub Pages from the `gh-pages` branch. To redeploy after code changes:
+
+```bash
+flutter build web --release --base-href "/mood_tracker/"
+git worktree add /tmp/mood_tracker_gh_pages gh-pages
+cp -a build/web/. /tmp/mood_tracker_gh_pages/
+touch /tmp/mood_tracker_gh_pages/.nojekyll
+cd /tmp/mood_tracker_gh_pages && git add -A && git commit -m "Redeploy" && git push
+cd - && git worktree remove /tmp/mood_tracker_gh_pages
+```
 
 ## Loom
 
