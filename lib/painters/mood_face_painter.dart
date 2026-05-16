@@ -69,6 +69,19 @@ class MoodFacePainter extends CustomPainter {
       );
       return;
     }
+    if (mood == MoodType.happy) {
+      canvas.drawLine(
+        Offset(size.width * 0.3, size.height * 0.34),
+        Offset(size.width * 0.45, size.height * 0.27),
+        paint,
+      );
+      canvas.drawLine(
+        Offset(size.width * 0.55, size.height * 0.27),
+        Offset(size.width * 0.7, size.height * 0.34),
+        paint,
+      );
+      return;
+    }
 
     canvas.drawLine(leftStart, leftEnd, paint);
     canvas.drawLine(rightStart, rightEnd, paint);
