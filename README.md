@@ -1,17 +1,41 @@
-# mood_tracker
+# Mood Tracker
 
-A new Flutter project.
+A simple Flutter web app for logging moods. Users can choose Happy, Neutral, or Sad, then see the latest seven mood entries in a horizontal timeline.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Provider state management with `ChangeNotifier`
+- Latest seven mood entries only
+- Manual mood faces using `CustomPainter`
+- Horizontal timeline
+- Tap animation for timeline items
+- Responsive centered web layout
 
-A few resources to get you started if this is your first Flutter project:
+## State Management
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Provider is used because the app state is small and clear. `MoodProvider` stores the entries, adds a new mood, removes old entries after seven, and notifies the UI.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## CustomPainter Notes
+
+The mood faces are drawn manually with canvas methods. The painter uses `drawCircle` for the head and eyes, `drawArc` for happy and sad mouths, and `drawLine` for the neutral mouth and eyebrows.
+
+## Run
+
+```bash
+flutter pub get
+flutter run -d chrome
+```
+
+## Build Web
+
+```bash
+flutter build web
+```
+
+## Deployment
+
+Deployment URL: add the hosted link here after publishing to Firebase Hosting or Vercel.
+
+## Loom
+
+Loom link: add the walkthrough link here after recording.
