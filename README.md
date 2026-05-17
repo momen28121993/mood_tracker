@@ -29,23 +29,14 @@ flutter run -d chrome
 ## Build Web
 
 ```bash
-flutter build web --release --base-href "/mood_tracker/"
+flutter build web --release
 ```
 
 ## Deployment
 
-Live app: https://momen28121993.github.io/mood_tracker/
+Live app: https://mood-tracker-eosin-six.vercel.app/
 
-Hosted on GitHub Pages from the `gh-pages` branch. To redeploy after code changes:
-
-```bash
-flutter build web --release --base-href "/mood_tracker/"
-git worktree add /tmp/mood_tracker_gh_pages gh-pages
-cp -a build/web/. /tmp/mood_tracker_gh_pages/
-touch /tmp/mood_tracker_gh_pages/.nojekyll
-cd /tmp/mood_tracker_gh_pages && git add -A && git commit -m "Redeploy" && git push
-cd - && git worktree remove /tmp/mood_tracker_gh_pages
-```
+Hosted on Vercel, auto-deployed from the connected GitHub repository. Vercel runs `bash build.sh` (which installs the stable Flutter SDK and runs `flutter build web --release`) and serves the resulting `build/web` directory. Configuration lives in [vercel.json](vercel.json) and [build.sh](build.sh).
 
 ## Loom
 
